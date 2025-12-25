@@ -1,4 +1,4 @@
-const text = document.querySelector("#colorText");
+const text = document.querySelector("#colorText");/*👈必ず(#)が必要*/ 
 const color = document.querySelector("#colorPicker");
 
 const colorBg = () => {
