@@ -1,0 +1,20 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    /*背景が伸びる見出し*/
+    /* color: #fff;
+    display: inline-block;
+    background-image: linear-gradient(90deg,#0db,#0bd 50%,#fff 50%,#fff);
+    background-size: 200% 100%;
+    padding: .5rem 1rem; */
+
+    /*ふよふよ動く見出し*/
+    background: #0bd;
+    color: #fff;
+    display: inline-block;
+    padding: 6rem 3rem;
+    border-radius: 50%;
+} 
+
