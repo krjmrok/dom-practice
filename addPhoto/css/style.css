@@ -1,0 +1,25 @@
+.grid {
+    display: grid;
+    gap: 30px;/*gapは文字通り画像の間のpx数を指定*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1600px;
+    margin: auto;
+    padding: 30px;
+}
+.img-item {
+    opacity: 0;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+
+
+
+/*
+
+
+grid-template-columns:は、グリッドの（列の）並び方を決めるプロパティ
+repeat()は、同じ動きを繰り返すもの
+minmax(300px(最小), 1fr(最大：余ってるスペースを均等に分ける))「1列は最低300pxは確保するけど、余裕があれば横いっぱいまで広がってOK」
+*/
