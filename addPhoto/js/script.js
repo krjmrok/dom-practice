@@ -36,11 +36,11 @@ for (let i = 0; i < items.length; i++) {
         opacity: [0,1],
 
         //落ちてくるような演出
-        rotate: ["5deg", 0],
-        scale: [1.1, 1],
+        // rotate: ["5deg", 0],
+        // scale: [1.1, 1],
 
         //浮かび上がり
-        // translate: ["0 50px", 0],
+        translate: ["0 50px", 0],
 
         //回転
         // rotate: ["x 90deg", 0],
@@ -49,7 +49,7 @@ for (let i = 0; i < items.length; i++) {
         // filter: ["blur(20px)", "blur(0)"],
         // filter: ["brightness()"],//😒まぶしいので注意
         // filter: ["saturate(20)"],//マイクラ？？
-        filter: ["grayscale(90)"],//昔を演出
+        // filter: ["grayscale(90)"],//昔を演出(白黒)
     };
     const options = {
         duration: 600,
