@@ -31,7 +31,7 @@
 
 #loading a {
     display: flex;
-    font-size: 10em;
+    font-size:2em;
     font-family: var(--japanese-font);
     background-color: none;
 }
@@ -39,11 +39,13 @@
 .gallery {
     display: flex;
     flex-direction: column-reverse;
+    justify-content: center;    
 }
 
 .gallery-image {
     width: min(100%, calc(38rem - 2rem));
     margin: auto;
+    padding: 1rem;
     position: relative;
 }
 
@@ -60,8 +62,9 @@
 }
 
 .gallery-image img {
-    aspect-ratio: 3/4;
+    aspect-ratio: 3/2;
     object-fit: cover;
+    height: auto;
     width: 100%;
 }
 
@@ -71,13 +74,25 @@
     grid-template-columns: repeat(5, 1fr);
     list-style: none;
     margin: 1rem 0;
+    padding-left: 1fr;
 }
 
 .gallery-thumbnails img {
-    aspect-ratio: 3/4;
+    aspect-ratio: 3/2;
     object-fit: cover;
     cursor: pointer;
+    height: auto;
+    width: 100%;
 }
+
+
+/* これ最初に指定するくらい重要👆上のwidthでの指定をすることで画像が親要素に収まるようにサイズ指定されている
+    img {
+  max-width: 100%;
+  height: auto;
+}
+*/
+
 
 .gallery-thumbnails li {
     list-style: none;
@@ -85,8 +100,9 @@
 
 .title {
     display: flex;
+    justify-content: center;
     font-family: var(--japanese-font);
-    font-size: 10rem;
+    font-size: 5rem;
 }
 
 @media(min-width: 800px){
@@ -98,7 +114,8 @@
         margin: 0;
     }
     .gallery-image img {
-        height: 100vh;
+        height: auto;
+        width: 100%;
     }
     .gallery-content {
         width: 30vw;
