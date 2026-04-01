@@ -101,6 +101,81 @@ window.addEventListener("load",() => { //windowで"load"されたのを確認し
 //     );
 //     });
 
+//---------------------------------------------------------------------------//
+//スライドメニュー
+const menuOpen = document.querySelector('#menu-open');
+const menuClose = document.querySelector('#menu-close');
+const menuPanel = document.querySelector('#menu-panel');
+const menuItems = document.querySelectorAll('#menu-panel li');
+const menuOptions = {
+  duration: 1000,//デフォだと1400
+  easing: 'ease',
+  fill: 'forwards',
+};
+//menuを開く
+// menuOpen.addEventListener("click", () => {
+//     menuPanel.animate({translate: ["100vw", 0]}, menuOptions);
+//     menuItems.forEach((menuItem, index) => {
+//         menuItem.animate(
+//             {
+//                 opacity: [0, 1],
+//                 translate: ["2rem", 0],
+//             },
+//             {
+//                 duration: 2400,
+//                 delay: 300 * index,
+//                 easing: "ease",
+//                 fill: "forwards",
+//             }
+//         );
+//     });
+// });
+
+// //menuを閉じる
+// menuClose.addEventListener("click", () => {
+//     menuPanel.animate({translate: [0, "100vw"]}, menuOptions);
+//     menuItems.forEach((menuItem) => {
+//         menuItem.animate({opacity: [1, 0]}, menuOptions);
+//     });
+// });
+
+//練習
+menuOpen.addEventListener("click", () => {
+    // console.log("メニューを開く");
+    menuPanel.animate({translate: ["100vw", 0]}, menuOptions);
+
+    //リンクを順番に表示
+    menuItems.forEach((menuItem,index) => {
+        // console.log(`${index}番目のリスト`);
+        menuItem.animate(
+            {
+                opacity: [0, 1],
+                translate: ["2rem", 0],
+            },
+            {
+                duration: 2000,
+                delay: 300 * index,
+                easing: "ease",
+                fill: "forwards",
+            }
+        );
+         
+    });
+});
+
+menuClose.addEventListener("click", () => {
+        menuPanel.animate({translate: [0, "100vw"]}, menuOptions);
+        menuItems.forEach((menuItem) => {
+            menuItem.animate({opacity: [1, 0]}, menuOptions);
+        })
+    });
+
+
+
+
+
+
+
 
 //---------------------------------------------------------------------------//
 const mainImage = document.querySelector(".gallery-image img");
@@ -147,3 +222,6 @@ const showAnimal = (animal) => {
 };
 
 animals.forEach(showAnimal);
+
+
+

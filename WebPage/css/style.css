@@ -1,6 +1,7 @@
 :root {
     --light-grey: #d3d3d3;
     --light-grey2: #b1b2c5;
+    --brown: #403632;
     --oswald-font: 'Oswald', sans-serif;
     --japanese-font: 'Zen Maru Gothic', sans-serif;
     
@@ -35,7 +36,90 @@
     font-family: var(--japanese-font);
     background-color: none;
 }
+/* --------------------------------------------- */
+/* 開閉ボタン */
+.btn-menu {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    z-index: 4;
+    padding: .5rem 1rem;
+    border: 1px solid var(--brown);
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    transition: .4s;
+}
+.btn-menu svg {
+    fill: var(--brown);
+    margin-top: .25rem;
+    height: 2rem;
+    width: 2rem;
+}
 
+/* 閉じるボタン */
+#menu-close {
+    border: 1px solid var(--light-grey);
+}
+#menu-close svg {
+    fill: var(--light-grey);
+}
+
+/* スライドメニューパネル */
+#menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    padding: 8rem 2rem 2rem;
+    width: max(32vw, 20rem);
+    height: 100vh;
+    background-color: var(--brown);
+    box-shadow: 0 0 2rem var(--brown);
+    font-family: var(--oswald-font);
+    translate: 100vw;/*あらかじめ外に出しておく*/
+}
+.menu-list {
+    list-style: none;
+}
+.menu-list li {
+    margin: 1.5rem 0;
+    opacity: 0;/*👈デフォルトでは、見えない状態に*/
+}
+.menu-list a {
+    color: var(--light-grey2);
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+/* ---------------------------------------------------- */
+.hero {
+    height: 100vh;
+    position: relative;
+}
+.hero::after {
+    content: '';
+    width: 50%;
+    height: 100vh;
+    background: url('../images/car1.jpg') no-repeat center / cover;
+    position: absolute;
+    inset: 0;
+}
+.hero .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 2;
+    width: 100%;
+    font-size: max(12vw, 3rem);
+    line-height: 1.2;
+    opacity: 0.5;
+}
+
+
+
+/* ---------------------------------------------------- */
 .gallery {
     display: flex;
     flex-direction: column-reverse;
